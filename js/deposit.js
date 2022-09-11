@@ -1,25 +1,27 @@
 // DRY ---> Do Not Repeat Yourself
-document.getElementById("btn-deposit").addEventListener("click", function () {
-  /* 
-    1. get the element by id
-    2. get the value from the element
-    3. convert string value to a number
-    */
-  const newDepositAmount = getInputFieldValueById("deposit-field");
-  /* 
-    1. get previous deposit total by id
+document.getElementById("btn-deposit").addEventListener("click", function() {
+    /* 
+      1. get the element by id
+      2. get the value from the element
+      3. convert string value to a number
+      */
+    const newDepositAmount = getInputFieldValueById("deposit-field");
 
-    */
-  const previousDepositTotal = getTextElementValueById("deposit-total");
+    /* 
+      1. get 
+      previous deposit total by id
 
-  // calculate new deposit total
-  const newDepositTotal = previousDepositTotal + newDepositAmount;
-  console.log(newDepositTotal, previousDepositTotal, newDepositAmount);
-  // set deposit total value
-  setTextElementValueById("deposit-total", newDepositTotal);
+      */
+    const previousDepositTotal = getTextElementValueById("deposit-total");
 
-  // get previous balance by using the function
-  const previousBalanceTotal = getextElementValueById("balance-total");
-  const newBalanceTotal = previousBalanceTotal + newDepositAmount;
-  setTextElementValueById("balance-total", newBalanceTotal);
-);
+    // calculate new deposit total
+    const newDepositTotal = previousDepositTotal + newDepositAmount;
+    console.log(newDepositTotal, previousDepositTotal, newDepositAmount);
+    // set deposit total value
+    setTextElementValueById("deposit-total", newDepositTotal);
+
+    // get previous balance by using the function
+    const previousBalanceTotal = getTextElementValueById("balance-total");
+    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+    setTextElementValueById("balance-total", newBalanceTotal);
+});
